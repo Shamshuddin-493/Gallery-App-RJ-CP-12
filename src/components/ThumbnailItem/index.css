@@ -1,0 +1,36 @@
+/* Write your code here. */
+/* Wrapper for each thumbnail */
+li {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+/* Active thumbnail gets a blue border */
+.thumbnail-item-active {
+  border-color: #0b69ff;
+}
+
+/* Thumbnail image */
+.thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  opacity: 0.5;
+}
+button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+}

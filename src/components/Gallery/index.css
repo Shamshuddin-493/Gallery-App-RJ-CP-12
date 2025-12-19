@@ -1,0 +1,47 @@
+/* Write your code here. */
+/* Container for the entire gallery */
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+}
+
+/* Main image styling */
+img {
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+/* Heading */
+h1 {
+  font-size: 28px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Subheading */
+p {
+  font-size: 16px;
+  margin-bottom: 24px;
+  color: #555;
+}
+
+/* List of thumbnails */
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
