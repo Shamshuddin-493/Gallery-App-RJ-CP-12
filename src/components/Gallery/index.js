@@ -1,6 +1,6 @@
 import {Component} from 'react'
 
-import ThumbNailItem from '../ThumbnailItem'
+import ThumbnailIteam from '../ThumbnailItem'
 
 import './index.css'
 
@@ -75,33 +75,35 @@ const imagesList = [
   },
 ]
 
+// Write your code here.
 class Gallery extends Component {
-  state = {activeImgId: imagesList[0].id}
-
-  setactivethumbNailId = id => {
-    this.setState({activeImgId: id})
+  state = {
+    activeThumbnailId: imagesList[0].id,
   }
 
-  
+  setActiveThumbnailId = id => {
+    this.setState({
+      activeThumbnailId: id,
+    })
+  }
+
   render() {
-    const {activeImgId} = this.state
-
-    const activeImg = imagesList.find(eachImg =>eachImg.id === activeImgId)
-
+    const {activeThumbnailId} = this.state
+    const {imageUrl, imageAltText} = imagesList[activeThumbnailId]
 
     return (
-      <div>
-        <div>
-          <img src={activeImg.imageUrl} alt="imageAltText" />
-          <h1>Nature Photography</h1>
-          <p>Nature Photography by Rahul</p>
-          <ul>
-            {imagesList.map(eachImg => (
-              <ThumbNailItem
-                thumbnailDetails={eachImg}
-                setactivethumbNailId={this.setactivethumbNailId}
-                isActive={activeImgId === eachImg.id}
-                key={eachImg.id}
+      <div className="bg-container">
+        <div className="card-container">
+          <img src={imageUrl} className="selected-image" alt={imageAltText} />
+          <h1 className="heading">Nature Photography </h1>
+          <p className="description">Nature Photography by Rahul </p>
+          <ul className="list">
+            {imagesList.map(eachImage => (
+              <ThumbnailIteam
+                key={eachImage.id}
+                imageDetails={eachImage}
+                isActive={activeThumbnailId === eachImage.id}
+                setActiveThumbnailId={this.setActiveThumbnailId}
               />
             ))}
           </ul>
